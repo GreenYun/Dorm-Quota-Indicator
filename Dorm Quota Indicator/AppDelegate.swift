@@ -253,7 +253,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @objc
     @IBAction
     func toShowAboutDialog(_ sender: NSMenuItem) {
-        urlLabel.url = URL(fileURLWithPath: "http://github.com/")
+        urlLabel.url = URL(fileURLWithPath: "https://github.com/GreenYun/Dorm-Quota-Indicator")
         urlLabel.resetCursorRects()
         let windowController = NSWindowController(window: aboutDialog)
         windowController.showWindow(nil)
