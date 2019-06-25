@@ -11,6 +11,14 @@
 		232C80C422BE948900D027DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 232C80C322BE948900D027DA /* Assets.xcassets */; };
 		232C80C722BE948900D027DA /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 232C80C522BE948900D027DA /* MainMenu.xib */; };
 		232C80D322BE948900D027DA /* Dorm_Quota_IndicatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232C80D222BE948900D027DA /* Dorm_Quota_IndicatorTests.swift */; };
+		232C80E322BEACB100D027DA /* QuotaQueryTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232C80E222BEACB100D027DA /* QuotaQueryTask.swift */; };
+		23A4585622C0AF930048199E /* SettingWindowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A4585522C0AF930048199E /* SettingWindowDelegate.swift */; };
+		23A4585822C1FBB70048199E /* HyperlinkTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A4585722C1FBB70048199E /* HyperlinkTextField.swift */; };
+		23DCEAD822BF322D00051498 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 23DCEAD422BF322D00051498 /* TFHppleElement.m */; };
+		23DCEAD922BF322D00051498 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 23DCEAD522BF322D00051498 /* TFHpple.m */; };
+		23DCEADA22BF322D00051498 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 23DCEAD622BF322D00051498 /* XPathQuery.m */; };
+		23DCEADC22BF32C300051498 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 23DCEADB22BF32C200051498 /* libxml2.dylib */; };
+		23DCEADE22BF6EEE00051498 /* DormInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DCEADD22BF6EEE00051498 /* DormInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +41,19 @@
 		232C80CE22BE948900D027DA /* Dorm Quota IndicatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dorm Quota IndicatorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		232C80D222BE948900D027DA /* Dorm_Quota_IndicatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dorm_Quota_IndicatorTests.swift; sourceTree = "<group>"; };
 		232C80D422BE948900D027DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		232C80E122BEAC1500D027DA /* Dorm Quota Indicator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Dorm Quota Indicator.entitlements"; sourceTree = "<group>"; };
+		232C80E222BEACB100D027DA /* QuotaQueryTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotaQueryTask.swift; sourceTree = "<group>"; };
+		232C80E822BF25DC00D027DA /* Dorm Quota Indicator-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dorm Quota Indicator-Bridging-Header.h"; sourceTree = "<group>"; };
+		23A4585522C0AF930048199E /* SettingWindowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingWindowDelegate.swift; sourceTree = "<group>"; };
+		23A4585722C1FBB70048199E /* HyperlinkTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyperlinkTextField.swift; sourceTree = "<group>"; };
+		23DCEAD222BF322D00051498 /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
+		23DCEAD322BF322D00051498 /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
+		23DCEAD422BF322D00051498 /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
+		23DCEAD522BF322D00051498 /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
+		23DCEAD622BF322D00051498 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
+		23DCEAD722BF322D00051498 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
+		23DCEADB22BF32C200051498 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = ../../../../../../../usr/lib/libxml2.dylib; sourceTree = "<group>"; };
+		23DCEADD22BF6EEE00051498 /* DormInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DormInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23DCEADC22BF32C300051498 /* libxml2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,11 +96,18 @@
 		232C80C022BE948800D027DA /* Dorm Quota Indicator */ = {
 			isa = PBXGroup;
 			children = (
+				23DCEAD122BF31ED00051498 /* TFHpple */,
+				232C80E122BEAC1500D027DA /* Dorm Quota Indicator.entitlements */,
 				232C80C122BE948800D027DA /* AppDelegate.swift */,
 				232C80C322BE948900D027DA /* Assets.xcassets */,
 				232C80C522BE948900D027DA /* MainMenu.xib */,
 				232C80C822BE948900D027DA /* Info.plist */,
 				232C80C922BE948900D027DA /* Dorm_Quota_Indicator.entitlements */,
+				232C80E222BEACB100D027DA /* QuotaQueryTask.swift */,
+				232C80E822BF25DC00D027DA /* Dorm Quota Indicator-Bridging-Header.h */,
+				23DCEADD22BF6EEE00051498 /* DormInfo.swift */,
+				23A4585522C0AF930048199E /* SettingWindowDelegate.swift */,
+				23A4585722C1FBB70048199E /* HyperlinkTextField.swift */,
 			);
 			path = "Dorm Quota Indicator";
 			sourceTree = "<group>";
@@ -90,6 +119,20 @@
 				232C80D422BE948900D027DA /* Info.plist */,
 			);
 			path = "Dorm Quota IndicatorTests";
+			sourceTree = "<group>";
+		};
+		23DCEAD122BF31ED00051498 /* TFHpple */ = {
+			isa = PBXGroup;
+			children = (
+				23DCEAD222BF322D00051498 /* TFHpple.h */,
+				23DCEAD522BF322D00051498 /* TFHpple.m */,
+				23DCEAD322BF322D00051498 /* TFHppleElement.h */,
+				23DCEAD422BF322D00051498 /* TFHppleElement.m */,
+				23DCEAD722BF322D00051498 /* XPathQuery.h */,
+				23DCEAD622BF322D00051498 /* XPathQuery.m */,
+				23DCEADB22BF32C200051498 /* libxml2.dylib */,
+			);
+			path = TFHpple;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +185,11 @@
 				TargetAttributes = {
 					232C80BD22BE948800D027DA = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					232C80CD22BE948900D027DA = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -192,7 +240,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23DCEAD822BF322D00051498 /* TFHppleElement.m in Sources */,
+				232C80E322BEACB100D027DA /* QuotaQueryTask.swift in Sources */,
+				23A4585822C1FBB70048199E /* HyperlinkTextField.swift in Sources */,
+				23DCEADA22BF322D00051498 /* XPathQuery.m in Sources */,
+				23DCEADE22BF6EEE00051498 /* DormInfo.swift in Sources */,
+				23A4585622C0AF930048199E /* SettingWindowDelegate.swift in Sources */,
 				232C80C222BE948800D027DA /* AppDelegate.swift in Sources */,
+				23DCEAD922BF322D00051498 /* TFHpple.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,11 +399,11 @@
 		232C80D822BE948900D027DA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Dorm Quota Indicator/Dorm_Quota_Indicator.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Dorm Quota Indicator/Dorm Quota Indicator.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = B3AZR88DZT;
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = "Dorm Quota Indicator/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -356,6 +411,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Org.GreenYun.Dorm-Quota-Indicator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Dorm Quota Indicator/Dorm Quota Indicator-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -363,11 +419,11 @@
 		232C80D922BE948900D027DA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Dorm Quota Indicator/Dorm_Quota_Indicator.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Dorm Quota Indicator/Dorm Quota Indicator.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = B3AZR88DZT;
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = "Dorm Quota Indicator/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -375,6 +431,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Org.GreenYun.Dorm-Quota-Indicator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Dorm Quota Indicator/Dorm Quota Indicator-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
