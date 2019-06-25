@@ -96,18 +96,18 @@
 		232C80C022BE948800D027DA /* Dorm Quota Indicator */ = {
 			isa = PBXGroup;
 			children = (
-				23DCEAD122BF31ED00051498 /* TFHpple */,
-				232C80E122BEAC1500D027DA /* Dorm Quota Indicator.entitlements */,
 				232C80C122BE948800D027DA /* AppDelegate.swift */,
 				232C80C322BE948900D027DA /* Assets.xcassets */,
-				232C80C522BE948900D027DA /* MainMenu.xib */,
-				232C80C822BE948900D027DA /* Info.plist */,
-				232C80C922BE948900D027DA /* Dorm_Quota_Indicator.entitlements */,
-				232C80E222BEACB100D027DA /* QuotaQueryTask.swift */,
 				232C80E822BF25DC00D027DA /* Dorm Quota Indicator-Bridging-Header.h */,
+				232C80E122BEAC1500D027DA /* Dorm Quota Indicator.entitlements */,
+				232C80C922BE948900D027DA /* Dorm_Quota_Indicator.entitlements */,
 				23DCEADD22BF6EEE00051498 /* DormInfo.swift */,
-				23A4585522C0AF930048199E /* SettingWindowDelegate.swift */,
 				23A4585722C1FBB70048199E /* HyperlinkTextField.swift */,
+				232C80C822BE948900D027DA /* Info.plist */,
+				232C80C522BE948900D027DA /* MainMenu.xib */,
+				232C80E222BEACB100D027DA /* QuotaQueryTask.swift */,
+				23A4585522C0AF930048199E /* SettingWindowDelegate.swift */,
+				23DCEAD122BF31ED00051498 /* TFHpple */,
 			);
 			path = "Dorm Quota Indicator";
 			sourceTree = "<group>";
