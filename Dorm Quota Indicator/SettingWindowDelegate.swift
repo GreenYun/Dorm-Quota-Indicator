@@ -9,10 +9,9 @@
 import Cocoa
 
 class SettingWindowDelegate: NSObject, NSWindowDelegate {
-    
-    var shouldCloseHandler: () -> Bool = { return false }
-    
-    func windowShouldClose(_ sender: NSWindow) -> Bool {
-        return shouldCloseHandler()
-    }
+	var shouldCloseHandler: () -> Bool = { false }
+
+	func windowShouldClose(_ sender: NSWindow) -> Bool {
+		return shouldCloseHandler()
+	}
 }
