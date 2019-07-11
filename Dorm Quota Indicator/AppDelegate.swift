@@ -151,6 +151,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		else {
 			toShowSettingPanel()
 		}
+		
+		let timer = Timer(timeInterval: 1800, target: self, selector: #selector(refreshQuota), userInfo: nil, repeats: true)
+		timer.fire()
 	}
 	
 	func applicationWillTerminate(_ aNotification: Notification) {
