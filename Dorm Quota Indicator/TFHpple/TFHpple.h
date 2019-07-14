@@ -27,9 +27,12 @@
 //  OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 //  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-
 #import <Foundation/Foundation.h>
 
+#ifndef TFHPPLE_pch
+#define TFHPPLE_pch
+
+#ifdef __OBJC__
 #import "TFHppleElement.h"
 
 @interface TFHpple : NSObject 
@@ -55,3 +58,6 @@
 @property (nonatomic, readonly) NSString * encoding;
 
 @end
+
+#endif /*__OBJC__*/
+#endif /*TFHPPLE_pch*/

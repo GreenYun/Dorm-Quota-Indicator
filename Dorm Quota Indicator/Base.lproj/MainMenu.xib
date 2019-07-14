@@ -15,8 +15,8 @@
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Dorm_Quota_Indicator" customModuleProvider="target">
             <connections>
                 <outlet property="aboutDialog" destination="IJA-fH-ymY" id="mRE-Kt-502"/>
-                <outlet property="buildingComboBox" destination="w8l-8O-gyY" id="h76-Sd-2mw"/>
-                <outlet property="campusComboBox" destination="PSo-Zw-SE4" id="8hb-nO-rdg"/>
+                <outlet property="buildingPopUpButton" destination="3P1-eJ-BUl" id="16w-Rq-cXu"/>
+                <outlet property="campusPopUpButton" destination="9Ab-Ep-Zuc" id="Dcr-gf-kmg"/>
                 <outlet property="roomTextField" destination="2Ae-qe-vP2" id="sZe-Us-jgL"/>
                 <outlet property="settingPanel" destination="R1g-ga-ZKc" id="uQd-G3-C6y"/>
                 <outlet property="urlLabel" destination="vGt-8s-ysC" id="2a1-4F-gCg"/>
@@ -32,7 +32,7 @@
                             <menuItem title="About Dorm Quota Indicator" id="5kV-Vb-QxS">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <action selector="toShowAboutDialog:" target="-1" id="Xn6-co-bQu"/>
+                                    <action selector="toShowAboutDialog:" target="Voe-Tx-rLC" id="c4P-Q3-ONQ"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
@@ -51,21 +51,21 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" utility="YES"/>
             <windowPositionMask key="initialPositionMask" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="167" y="1134" width="270" height="142"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1177"/>
+            <rect key="screenRect" x="0.0" y="1200" width="1920" height="1057"/>
             <view key="contentView" id="1hy-r9-NCt">
                 <rect key="frame" x="0.0" y="0.0" width="270" height="142"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pwk-4a-UaC">
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" preferredMaxLayoutWidth="61" id="Pwk-4a-UaC">
                         <rect key="frame" x="18" y="102" width="65" height="20"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Campus" id="XO7-5l-5om">
-                            <font key="font" usesAppearanceFont="YES"/>
+                            <font key="font" metaFont="label" size="13"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ybZ-eB-oWh">
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" preferredMaxLayoutWidth="61" id="ybZ-eB-oWh">
                         <rect key="frame" x="18" y="60" width="65" height="20"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Building" id="Coi-dQ-EUa">
@@ -74,7 +74,7 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WB6-Xr-W69">
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" preferredMaxLayoutWidth="61" id="WB6-Xr-W69">
                         <rect key="frame" x="18" y="20" width="65" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Room" id="AxX-Eq-1bT">
@@ -83,48 +83,70 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PSo-Zw-SE4">
-                        <rect key="frame" x="94" y="98" width="159" height="26"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                        <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="3" id="MGm-T7-fw9">
-                            <font key="font" metaFont="message"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </comboBoxCell>
-                        <connections>
-                            <action selector="campusDidChanged:" target="-1" id="M6U-ui-Rv7"/>
-                        </connections>
-                    </comboBox>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Ae-qe-vP2">
+                    <textField verticalHuggingPriority="750" id="2Ae-qe-vP2">
                         <rect key="frame" x="94" y="20" width="156" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="gIS-GQ-9in">
-                            <font key="font" metaFont="message"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="gIS-GQ-9in">
+                            <font key="font" metaFont="label" size="13"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
-                            <action selector="roomDidChanged:" target="-1" id="Mwh-Sr-yXF"/>
+                            <action selector="roomDidChanged:" target="Voe-Tx-rLC" id="P1p-7a-iG2"/>
                         </connections>
                     </textField>
-                    <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w8l-8O-gyY">
-                        <rect key="frame" x="94" y="58" width="159" height="26"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                        <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="10" id="LJJ-4R-3DC">
-                            <font key="font" metaFont="message"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </comboBoxCell>
-                        <connections>
-                            <action selector="buildingDidChanged:" target="-1" id="caS-7c-4im"/>
-                        </connections>
-                    </comboBox>
+                    <popUpButton verticalHuggingPriority="750" id="3P1-eJ-BUl">
+                        <rect key="frame" x="92" y="60" width="161" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="TxT-MV-D0u" id="4he-55-vbH">
+                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="label" size="13"/>
+                            <menu key="menu" id="WL9-Nf-otq">
+                                <items>
+                                    <menuItem title="Item 1" state="on" id="TxT-MV-D0u"/>
+                                </items>
+                            </menu>
+                        </popUpButtonCell>
+                    </popUpButton>
+                    <popUpButton verticalHuggingPriority="750" id="9Ab-Ep-Zuc">
+                        <rect key="frame" x="92" y="102" width="161" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <popUpButtonCell key="cell" type="push" title="North" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="gmV-hJ-PF3" id="q0u-hF-w2z">
+                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="label" size="13"/>
+                            <menu key="menu" id="mfk-gN-H5a">
+                                <items>
+                                    <menuItem title="North" state="on" id="gmV-hJ-PF3">
+                                        <attributedString key="attributedTitle"/>
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="campusSelected:" target="-1" id="aAN-7O-1qU"/>
+                                        </connections>
+                                    </menuItem>
+                                    <menuItem title="South" tag="1" id="ala-Mz-vYG">
+                                        <attributedString key="attributedTitle"/>
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="campusSelected:" target="Voe-Tx-rLC" id="tXV-0r-Eot"/>
+                                        </connections>
+                                    </menuItem>
+                                    <menuItem title="Xili" tag="2" id="jUE-gw-i1R">
+                                        <attributedString key="attributedTitle"/>
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="campusSelected:" target="Voe-Tx-rLC" id="TPH-DX-fqm"/>
+                                        </connections>
+                                    </menuItem>
+                                </items>
+                            </menu>
+                        </popUpButtonCell>
+                    </popUpButton>
                 </subviews>
             </view>
             <point key="canvasLocation" x="148" y="309"/>
         </window>
         <userDefaultsController representsSharedInstance="YES" id="g12-Q1-TCb"/>
-        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" id="IJA-fH-ymY">
+        <window title="About" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" id="IJA-fH-ymY">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <windowPositionMask key="initialPositionMask" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="885" y="942" width="270" height="140"/>
@@ -133,7 +155,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="270" height="140"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zi6-vv-K16">
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="zi6-vv-K16">
                         <rect key="frame" x="18" y="72" width="234" height="48"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Dorm Quota Indicator" id="clN-9l-6ze">
@@ -142,7 +164,7 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0ii-8b-94l">
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="0ii-8b-94l">
                         <rect key="frame" x="95" y="68" width="81" height="17"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" title="Verion: 1.0" id="gCt-D9-eFI">
@@ -151,29 +173,29 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z2z-mh-1TQ">
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="z2z-mh-1TQ">
                         <rect key="frame" x="30" y="20" width="200" height="17"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" title="GreenYun Organization Presents" id="ALP-YY-E2h">
-                            <font key="font" metaFont="message"/>
+                            <font key="font" metaFont="label" size="13"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ymu-Ty-6be">
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Ymu-Ty-6be">
                         <rect key="frame" x="30" y="45" width="51" height="17"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" lineBreakMode="truncatingTail" title="GitHub:" id="PWT-vg-65l">
-                            <font key="font" metaFont="message"/>
+                            <font key="font" metaFont="label" size="13"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vGt-8s-ysC" customClass="HyperlinkTextField" customModule="Dorm_Quota_Indicator" customModuleProvider="target">
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="vGt-8s-ysC" customClass="HyperlinkTextField" customModule="Dorm_Quota_Indicator" customModuleProvider="target">
                         <rect key="frame" x="87" y="45" width="143" height="17"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" title="DormQuotaIndicator" id="80y-mp-XNp">
-                            <font key="font" metaFont="message"/>
+                            <font key="font" metaFont="label" size="13"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>

@@ -21,6 +21,7 @@ class DormInfo {
 	
 	typealias tupleBuilding = (Id: Int, name: String)
 	
+	/*
 	static let campusNorthBuildings: [tupleBuilding] = [
 		(6121, "乔林阁1-10层"),
 		(6363, "乔林阁11-12层"),
@@ -66,7 +67,54 @@ class DormInfo {
 		(76, "云杉轩"),
 		(77, "紫藤轩"),
 	]
+*/
+	static let campusNorthBuildings: [tupleBuilding] = [
+		(6121, "Qiao Lin Court Floors 1-10"),
+		(6363, "Qiao Lin Court Floors 11-12"),
+		(6122, "Qiao Mu Court Floors 1-10"),
+		(6364, "Qiao Mu Court Floors 11-12"),
+		(7724, "Qiao Wu Court Floors 2-10"),
+		(7725, "Qiao Wu Court Floors 11-20"),
+		(6875, "Qiao Sen Court Floors 2-10"),
+		(6876, "Qiao Sen Court Floors 11-20"),
+		(6877, "Qiao Xiang Court Floors 2-10"),
+		(6878, "Qiao Xiang Court Floors 11-20"),
+		(47, "Ju Han House"),
+		(49, "Purple Rosa (Zi Wei) House Floors 1-5"),
+		(754, "Purple Rosa (Zi Wei) House Floors 6-8"),
+		(50, "Ceiba (Mu Mian) House"),
+		(51, "Cottonrose (Ju Shuang) House"),
+		(5377, "Plaintive Cuckoo (Yu Juan) House Floors 2-8"),
+		(5374, "Plaintive Cuckoo (Yu Juan) House Floors 9-11"),
+		(5375, "Locust (Feng Huai) House Floors 2-8"),
+		(5376, "Locust (Feng Huai) House Floors 9-15"),
+		(54, "Camellia (Shan Cha) House"),
+		(55, "Pomegranate (Hong Liu) House"),
+		(56, "Meliaceae (Mi Lan) House"),
+		(57, "Tobira (Hai Tong) House"),
+		(58, "Tao Li House"),
+		(59, "Grandiflora (Ling Xiao) House"),
+		(60, "Peng Lai Apartment"),
+		(61, "Silk Oak (Yin Hua) House"),
+		(62, "Red Bean (Hong Dou) House"),
+		(63, "Osmanthus (Mu Xi) Pavilion"),
+		(64, "Maple (Dan Feng) Pavilion"),
+		(65, "Pterocarpus (Zi Tan) Pavilion"),
+		(66, "Photinia (Shi Nan) Pavilion"),
+		(67, "Sago Palm (Su Tie) Pavilion"),
+		(68, "Rue (Yun Xiang) Court"),
+		(69, "Clove (Ding Xiang) Court"),
+		(70, "Apricot (Wen Xing) Court"),
+		(71, "Asiatic apple (Hai Tang) Court"),
+		(72, "Shu Ying Court"),
+		(73, "Asarum (Du Heng) Court"),
+		(74, "Magnolia (Xin Yi) Court"),
+		(75, "Bamboo (Yun Zhu) Court"),
+		(76, "Dragon Spruce (Yun Shan) Pailion"),
+		(77, "Wisteria (Zi Teng) Pavilion"),
+	]
 	
+	/*
 	static let campusSouthBuildings: [tupleBuilding] = [
 		(6875, "一栋春笛3-8楼"),
 		(6876, "二栋夏筝3-17楼"),
@@ -78,11 +126,31 @@ class DormInfo {
 		(8241, "四栋冬筑11-14楼"),
 		(8242, "四栋冬筑15-17楼"),
 	]
+*/
+	static let campusSouthBuildings: [tupleBuilding] = [
+		(6875, "Spring Flute Floors 3-8"),
+		(6876, "Summer Zheng Floors 3-17"),
+		(6877, "Autumn Se Floors 3-8"),
+		(6878, "Winter Zhu Floors 3-6"),
+		(7119, "Spring Flute Floors 9-17"),
+		(7828, "Autumn Se Floors 9-17"),
+		(8240, "Winter Zhu Floors 7-10"),
+		(8241, "Winter Zhu Floors 11-14"),
+		(8242, "Winter Zhu Floors 15-17"),
+	]
 	
+	/*
 	static let campusXiliBuildings: [tupleBuilding] = [
 		(10057, "A栋风信子"),
 		(10934, "B栋山楂树"),
 		(10935, "C栋胡杨林"),
+	]
+*/
+	
+	static let campusXiliBuildings: [tupleBuilding] = [
+		(10057, "Hyacinth (Feng Xin Zi)"),
+		(10934, "Hawthorn (Shan Zha Shu)"),
+		(10935, "Populus (Hu Yang Lin)"),
 	]
 	
 	var campus: Int

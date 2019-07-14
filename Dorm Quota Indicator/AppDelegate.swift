@@ -10,13 +10,11 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-	@IBOutlet
-	var settingPanel: NSPanel!
 	
 	@IBOutlet
-	var campusComboBox: NSComboBox!
+	var campusPopUpButton: NSPopUpButton!
 	@IBOutlet
-	var buildingComboBox: NSComboBox!
+	var buildingPopUpButton: NSPopUpButton!
 	@IBOutlet
 	var roomTextField: NSTextField!
 	
@@ -24,19 +22,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	var settingWindowController: NSWindowController?
 	var settingWindowDelegate: SettingWindowDelegate?
 	
-	let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
+	let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 	
-	var campus: Int = -1
-	var buildingIndex: Int = -1
-	var room: Int = -1
+	var campus: Int = 0
+	var buildingIndex: Int = 0
+	var room: Int = 0
 	
 	@IBAction
-	func campusDidChanged(_ sender: NSComboBox) {
-		if campus != sender.indexOfSelectedItem {
-			campus = sender.indexOfSelectedItem
-			buildingIndex = 0
-		}
+	func campusSelected(_ sender: NSMenuItem) {
 		var buildingList: [DormInfo.tupleBuilding]?
+		
+		campus = sender.tag
+		
 		switch campus {
 		case 0:
 			buildingList = DormInfo.campusNorthBuildings
@@ -56,25 +53,34 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 				alert.alertStyle = .critical
 				alert.beginSheetModal(for: settingPanel) { _ in
 					self.campus = 0
-					self.campusComboBox.selectItem(at: 0)
 				}
 			}
 			buildingList = DormInfo.campusNorthBuildings
 		}
 		
-		buildingComboBox.removeAllItems()
+		buildingPopUpButton.menu?.removeAllItems()
 		if buildingList != nil {
+			var tag: Int = 0
 			for item in buildingList! {
-				buildingComboBox.addItem(withObjectValue: item.name)
+				let menuItem = NSMenuItem(title: item.name, action: #selector(buildingSelected(_:)), keyEquivalent: "")
+				menuItem.tag = tag
+				buildingPopUpButton.menu?.addItem(menuItem)
+				if tag == buildingIndex {
+					menuItem.state = .on
+					buildingPopUpButton.selectItem(at: tag)
+				}
+				else {
+					menuItem.state = .off
+				}
+				tag += 1
 			}
 		}
-		buildingComboBox.selectItem(at: buildingIndex)
 	}
 	
 	@IBAction
-	func buildingDidChanged(_ sender: NSComboBox) {
-		if sender.indexOfSelectedItem >= 0 {
-			buildingIndex = sender.indexOfSelectedItem
+	func buildingSelected(_ sender: NSMenuItem) {
+		if sender.tag >= 0 {
+			buildingIndex = sender.tag
 		}
 		else {
 			if settingError != 0 {
@@ -119,8 +125,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		settingWindowDelegate?.shouldCloseHandler = {
 			self.settingError = 0
 			
-			self.buildingDidChanged(self.buildingComboBox)
-			self.campusDidChanged(self.campusComboBox)
 			self.roomDidChanged(self.roomTextField)
 			
 			if self.settingError != 0 {
@@ -131,7 +135,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		settingPanel.delegate = settingWindowDelegate
 		
 		NotificationCenter.default.addObserver(forName: NSPanel.willCloseNotification, object: settingPanel, queue: nil) { _ in
-			self.saveUserDefault()
+			self.saveUserDefaults()
 			self.setStatusButton("Loading...")
 			self.refreshQuota()
 		}
@@ -142,9 +146,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		addDefaultMenuItems(menu: statusMenu)
 		statusItem.menu = statusMenu
 		
-		campusComboBox.addItems(withObjectValues: ["North", "South", "Xili"])
+		getUserDefaults()
 		
-		getUserDefault()
+		campusPopUpButton.selectItem(at: self.campus)
+		self.campusSelected((self.campusPopUpButton.menu?.item(at: self.campus))!)
+		self.buildingSelected((self.buildingPopUpButton.menu?.item(at: self.buildingIndex))!)
 		if room != 0 {
 			refreshQuota()
 		}
@@ -156,17 +162,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		timer.fire()
 	}
 	
-	func applicationWillTerminate(_ aNotification: Notification) {
+	//func applicationWillTerminate(_ aNotification: Notification) {
 		// Insert code here to tear down your application
-	}
-	
-	func addDefaultMenuItems(menu: NSMenu) {
-		menu.addItem(withTitle: "Refresh", action: #selector(refreshQuota), keyEquivalent: "R")
-		menu.addItem(withTitle: "Set up", action: #selector(toShowSettingPanel), keyEquivalent: ",")
-		menu.addItem(withTitle: "About", action: #selector(toShowAboutDialog), keyEquivalent: "")
-		menu.addItem(NSMenuItem.separator())
-		menu.addItem(withTitle: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
-	}
+	//}
 	
 	@objc
 	func refreshQuota() {
@@ -206,34 +204,27 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		query.startLoad()
 	}
 	
-	@objc
-	func toShowSettingPanel() {
-		if campus >= 0 || campus < 3 {
-			campusComboBox.selectItem(at: campus)
-		}
-		campusDidChanged(campusComboBox)
-		if buildingIndex >= 0 {
-			buildingComboBox.selectItem(at: buildingIndex)
-		}
-		roomTextField.stringValue = "\(room)"
-		settingWindowController?.showWindow(nil)
-	}
-	
 	func setStatusButton(_ text: String) {
 		if let statusButton = statusItem.button {
-			// statusButton.font = NSFont.systemFont(ofSize: 12)
 			statusButton.title = text
-			statusItem.length = statusButton.title.size(withAttributes: [NSAttributedString.Key.font: NSFont.systemFont(ofSize: 16.0)]).width
 		}
 	}
 	
-	func saveUserDefault() {
+	func addDefaultMenuItems(menu: NSMenu) {
+		menu.addItem(withTitle: "Refresh", action: #selector(refreshQuota), keyEquivalent: "R")
+		menu.addItem(withTitle: "Set up", action: #selector(toShowSettingPanel), keyEquivalent: ",")
+		menu.addItem(withTitle: "About", action: #selector(toShowAboutDialog), keyEquivalent: "")
+		menu.addItem(NSMenuItem.separator())
+		menu.addItem(withTitle: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
+	}
+	
+	func saveUserDefaults() {
 		UserDefaults.standard.set(campus, forKey: "Campus")
 		UserDefaults.standard.set(buildingIndex, forKey: "Building")
 		UserDefaults.standard.set(room, forKey: "Room")
 	}
 	
-	func getUserDefault() {
+	func getUserDefaults() {
 		if let campus = UserDefaults.standard.value(forKey: "Campus") as? Int {
 			self.campus = campus
 		}
@@ -243,6 +234,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		if let room = UserDefaults.standard.value(forKey: "Room") as? Int {
 			self.room = room
 		}
+	}
+	
+	@IBOutlet
+	var settingPanel: NSPanel!
+	
+	@objc
+	func toShowSettingPanel() {
+		roomTextField.stringValue = "\(room)"
+		settingWindowController?.showWindow(nil)
 	}
 	
 	@IBOutlet
@@ -257,4 +257,5 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		let windowController = NSWindowController(window: aboutDialog)
 		windowController.showWindow(nil)
 	}
+
 }

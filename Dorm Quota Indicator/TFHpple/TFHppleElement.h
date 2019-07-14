@@ -29,6 +29,10 @@
 
 #import <Foundation/Foundation.h>
 
+#ifndef TFHPPLE_ELEMENT_pch
+#define TFHPPLE_ELEMENT_pch
+
+#ifdef __OBJC__
 
 @interface TFHppleElement : NSObject
 
@@ -104,3 +108,6 @@
 
 
 @end
+
+#endif /*__OBJC__*/
+#endif /*TFHPPLE_ELEMENT_pch*/
