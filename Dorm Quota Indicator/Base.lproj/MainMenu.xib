@@ -60,7 +60,7 @@
                         <rect key="frame" x="18" y="102" width="65" height="20"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Campus" id="XO7-5l-5om">
-                            <font key="font" metaFont="label" size="13"/>
+                            <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
@@ -87,7 +87,7 @@
                         <rect key="frame" x="94" y="20" width="156" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="gIS-GQ-9in">
-                            <font key="font" metaFont="label" size="13"/>
+                            <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
@@ -100,7 +100,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="TxT-MV-D0u" id="4he-55-vbH">
                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="label" size="13"/>
+                            <font key="font" metaFont="system"/>
                             <menu key="menu" id="WL9-Nf-otq">
                                 <items>
                                     <menuItem title="Item 1" state="on" id="TxT-MV-D0u"/>
@@ -113,7 +113,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <popUpButtonCell key="cell" type="push" title="North" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="gmV-hJ-PF3" id="q0u-hF-w2z">
                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="label" size="13"/>
+                            <font key="font" metaFont="system"/>
                             <menu key="menu" id="mfk-gN-H5a">
                                 <items>
                                     <menuItem title="North" state="on" id="gmV-hJ-PF3">
@@ -167,7 +167,7 @@
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="0ii-8b-94l">
                         <rect key="frame" x="95" y="68" width="81" height="17"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" lineBreakMode="clipping" title="Verion: 1.0" id="gCt-D9-eFI">
+                        <textFieldCell key="cell" lineBreakMode="clipping" title="Verion: 1.1" id="gCt-D9-eFI">
                             <font key="font" size="12" name="AppleBraille-Outline6Dot"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -177,7 +177,7 @@
                         <rect key="frame" x="30" y="20" width="200" height="17"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" title="GreenYun Organization Presents" id="ALP-YY-E2h">
-                            <font key="font" metaFont="label" size="13"/>
+                            <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
@@ -186,7 +186,7 @@
                         <rect key="frame" x="30" y="45" width="51" height="17"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" lineBreakMode="truncatingTail" title="GitHub:" id="PWT-vg-65l">
-                            <font key="font" metaFont="label" size="13"/>
+                            <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
@@ -195,7 +195,7 @@
                         <rect key="frame" x="87" y="45" width="143" height="17"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" title="DormQuotaIndicator" id="80y-mp-XNp">
-                            <font key="font" metaFont="label" size="13"/>
+                            <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
